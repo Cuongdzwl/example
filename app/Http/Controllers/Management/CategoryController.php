@@ -36,7 +36,7 @@ class CategoryManagement extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
