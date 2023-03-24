@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class CategoryManagement extends Controller
+use App\Models\Category;
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class CategoryManagement extends Controller
      */
     public function index()
     {
-        // Get the list of categories
-        return view('management.category');
+        // Get the list of categories in database
+        $categories = Category::all();    
+        return view('management.category')->with('categories', $categories);
     }
 
     /**
