@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Management\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Management\CategoryManagement;
 
@@ -28,4 +29,7 @@ Route::get('/post/{id}', function ($id) {
 });
 
 //Route::get('/index',[CategoryManagement::class, 'Index']);
-Route::resource('management/category',CategoryManagement::class);
+Route::resource('management/category',CategoryController::class);
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
